@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
+// Metadata dans React classique, tu peux mettre dans un Helmet si besoin
 const metadata = {
   title: "Events App",
   description: "Application mobile pour découvrir et s'inscrire aux événements",
@@ -30,7 +30,7 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${geistSans.variable} ${geistMono.variable} bg-[#F6F7F8]`}>
+    <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />

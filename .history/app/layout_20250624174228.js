@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
+// Metadata dans React classique, tu peux mettre dans un Helmet si besoin
 const metadata = {
   title: "Events App",
   description: "Application mobile pour découvrir et s'inscrire aux événements",

@@ -1,4 +1,4 @@
-import React from "react";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
@@ -14,8 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
-const metadata = {
+export const metadata: Metadata = {
   title: "Events App",
   description: "Application mobile pour découvrir et s'inscrire aux événements",
   manifest: "/manifest.json",
@@ -28,18 +27,19 @@ const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="fr" className={`${geistSans.variable} ${geistMono.variable} bg-[#F6F7F8]`}>
+    <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <link rel="manifest" href={metadata.manifest} />
-        <meta name="theme-color" content={metadata.themeColor} />
-        <meta name="viewport" content={metadata.viewport} />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content={metadata.appleWebApp.title} />
+        <meta name="apple-mobile-web-app-title" content="Events App" />
         <link rel="apple-touch-icon" href="/icon-192.png" />
       </head>
       <body suppressHydrationWarning className="antialiased bg-gray-100">
