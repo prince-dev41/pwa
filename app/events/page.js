@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import fetchEvents from '../data/event'
 const events = [
   {
     id: "1",
@@ -76,6 +77,10 @@ const events = [
 ];
 
 export default function EventsPage() {
+
+  // Vous pouvez remplacer le tableau statique en activant la fonction pour fetch
+  //les datas depuis votre API
+  // const events = fetchEvents("votre url de l'API GET")
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}

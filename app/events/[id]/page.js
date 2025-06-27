@@ -77,12 +77,20 @@ const events = [
   }
 ];
 export default async function EventDetailPage({params}) {
+  
+  // Vous pouvez remplacer le tableau statique en activant la fonction pour fetch
+  //les datas depuis votre API
+  // const events = fetchEvents("votre url de l'API GET")
+
+
   const { id } = await params;
   const event = events.find(e => e.id === id);
 
   if (!event) {
     notFound();
   }
+
+
 
   return (
     <div className="min-h-screen bg-white">
