@@ -30,7 +30,7 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${geistSans.variable} bg-[#F6F7F8]`}>
+    <html lang="fr" className={`${geistSans.variable} ${Poppins.variable} bg-[#F6F7F8]`}>
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
@@ -45,7 +45,8 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning className="antialiased bg-gray-100">
         <PWAHandler />
         <div className="min-h-screen flex justify-center bg-gray-100">
-          <div className="w-full max-w-[375px] md:max-w-full bg-white min-h-screen shadow-lg">
+          <div className="w-full max-w-screen-lg bg-white min-h-screen shadow-lg mx-auto px-4">
+
             <ClientBody>{children}</ClientBody>
           </div>
         </div>

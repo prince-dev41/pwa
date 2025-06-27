@@ -1,5 +1,5 @@
 import React from "react";
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Popp } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import PWAHandler from "./components/PWAHandler";
@@ -30,7 +30,7 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${geistSans.variable} bg-[#F6F7F8]`}>
+    <html lang="fr" className={`${geistSans.variable} ${geistMono.variable} bg-[#F6F7F8]`}>
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />

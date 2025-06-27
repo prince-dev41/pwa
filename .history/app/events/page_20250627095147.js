@@ -105,7 +105,7 @@ export default function EventsPage() {
             <Link
               key={event.id}
               href={`/events/${event.id}`}
-              className="grid grid-cols-4"
+              className="block"
             >
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow">
                 {/* Event Image */}

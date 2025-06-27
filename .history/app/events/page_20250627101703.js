@@ -100,12 +100,12 @@ export default function EventsPage() {
 
       {/* Events Grid */}
       <main className="p-4 pb-24">
-        <div className="space-y-4">
+        <div className="space-y-4 md:grid mdgrid-cols-4">
           {events.map((event) => (
             <Link
               key={event.id}
               href={`/events/${event.id}`}
-              className="grid grid-cols-4"
+              className="block"
             >
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow">
                 {/* Event Image */}

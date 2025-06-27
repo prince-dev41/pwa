@@ -1,17 +1,14 @@
 import React from "react";
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import PWAHandler from "./components/PWAHandler";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // selon tes besoins
+  variable: "--font-poppins", // (optionnel) pour CSS custom
+  display: "swap", // bonne pratique pour éviter les flashes
 });
 
 
@@ -30,7 +27,7 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${geistSans.variable} bg-[#F6F7F8]`}>
+    <html lang="fr" className={`${poppins.variable} bg-[#F6F7F8]`}>
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
@@ -45,7 +42,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning className="antialiased bg-gray-100">
         <PWAHandler />
         <div className="min-h-screen flex justify-center bg-gray-100">
-          <div className="w-full max-w-[375px] md:max-w-full bg-white min-h-screen shadow-lg">
+          <div className="w-full max-w-[375px] md:max-w-full md:w-full bg-white min-h-screen shadow-lg mx-auto md:mx-0 md:shadow-none md:rounded-none px-4 md:px-8">
             <ClientBody>{children}</ClientBody>
           </div>
         </div>
