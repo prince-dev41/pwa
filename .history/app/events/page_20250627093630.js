@@ -154,16 +154,13 @@ export default function EventsPage() {
       </main>
 
       {/* Bottom Navigation */}
-      {/* <nav className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[375px] bg-white border-t border-gray-200">
+      <nav className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[375px] bg-white border-t border-gray-200">
         <div className="flex justify-around py-2">
           <Link href="/" className="flex flex-col items-center py-2 px-3">
             <span className="text-gray-400 text-sm">🏠</span>
             <span className="text-xs text-gray-400">Accueil</span>
-          </Link>
-          <Link href="/events" className="flex flex-col items-center py-2 px-3">
-            <span className="text-blue-600 text-sm">📅</span>
-            <span className="text-xs text-blue-600 font-medium">Événements</span>
-          </Link>
+          </Link> text-blue-600 font-medium">Événements</span>
+
           <Link href="/favorites" className="flex flex-col items-center py-2 px-3 relative">
             <span className="text-gray-400 text-sm">❤️</span>
             <span className="text-xs text-gray-400">Favoris</span>
@@ -177,7 +174,7 @@ export default function EventsPage() {
             <span className="text-xs text-gray-400">Menu</span>
           </Link>
         </div>
-      </nav> */}
+      </nav>
     </div>
   );
 }
