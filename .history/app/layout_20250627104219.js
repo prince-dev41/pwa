@@ -1,16 +1,18 @@
 import React from "react";
-import { Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import PWAHandler from "./components/PWAHandler";
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
-const poppins = Poppins(
-  {
-    subsets: ["latin"],
-    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  }
-);
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 
 const metadata = {
@@ -28,7 +30,7 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${poppins.className} bg-[#F6F7F8]`}>
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
@@ -40,10 +42,10 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content={metadata.appleWebApp.title} />
         <link rel="apple-touch-icon" href="/icon-192.png" />
       </head>
-      <body suppressHydrationWarning className={`antialiased ${poppins.className} bg-[#F6F7F8]`}>
+      <body suppressHydrationWarning className="antialiased bg-gray-100">
         <PWAHandler />
-        <div className="min-h-screen flex justify-center bg-gray-100  w-full">
-          <div className="w-full max-w-[375px] md:max-w-screen-2xl md:w-full bg-white min-h-screen shadow-lg mx-auto">
+        <div className="min-h-screen flex justify-center bg-gray-100">
+          <div className="w-full max-w-[375px] md:max-w-full bg-white min-h-screen shadow-lg">
             <ClientBody>{children}</ClientBody>
           </div>
         </div>

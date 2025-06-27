@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import fetchEvents from "../data/event"; // Tu peux activer ça plus tard
 
 const events = [
   {

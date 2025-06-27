@@ -4,7 +4,6 @@ import "./globals.css";
 import ClientBody from "./ClientBody";
 import PWAHandler from "./components/PWAHandler";
 
-
 const poppins = Poppins(
   {
     subsets: ["latin"],
@@ -28,7 +27,7 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${poppins.className} bg-[#F6F7F8]`}>
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
@@ -40,9 +39,9 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content={metadata.appleWebApp.title} />
         <link rel="apple-touch-icon" href="/icon-192.png" />
       </head>
-      <body suppressHydrationWarning className={`antialiased ${poppins.className} bg-[#F6F7F8]`}>
+      <body suppressHydrationWarning className="antialiased bg-gray-100">
         <PWAHandler />
-        <div className="min-h-screen flex justify-center bg-gray-100  w-full">
+        <div className="min-h-screen flex justify-center bg-gray-100">
           <div className="w-full max-w-[375px] md:max-w-screen-2xl md:w-full bg-white min-h-screen shadow-lg mx-auto">
             <ClientBody>{children}</ClientBody>
           </div>
